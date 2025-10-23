@@ -1,9 +1,9 @@
 import React from 'react';
-import type { Counter, User } from '@/types/common.interfaces';
+import type { Counter as CounterType, User } from '@/types/common.interfaces';
 import styles from './Counter.module.scss';
 
 type CounterProps = {
-  counter: Counter;
+  counter: CounterType;
   updateCounter: (value: number) => void;
   users: User[];
 };
