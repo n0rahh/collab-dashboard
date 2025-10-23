@@ -1,0 +1,79 @@
+@use '../../styles/variables' as vars;
+
+.userList {
+  background-color: vars.$background-gradient-end;
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 280px;
+  color: vars.$primary-color;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: vars.$secondary-color;
+    text-align: center;
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.userItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background-color: lighten(vars.$background-gradient-end, 5%);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: lighten(vars.$background-gradient-end, 15%);
+  }
+}
+
+.statusIndicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: vars.$primary-color;
+  position: relative;
+
+  &[data-typing='true'] {
+    background-color: vars.$secondary-color;
+    animation: blink 1.5s infinite;
+  }
+}
+
+.userName {
+  flex: 1;
+  font-weight: 600;
+  color: vars.$primary-color;
+}
+
+.lastActive {
+  font-size: 0.85rem;
+  color: lighten(vars.$primary-color, 20%);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
