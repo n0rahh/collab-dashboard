@@ -1,0 +1,58 @@
+@use '../../styles/variables' as vars;
+
+.counterWrapper {
+  background-color: vars.$background-gradient-end;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: vars.$primary-color;
+  max-width: 320px;
+  text-align: center;
+  user-select: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.counterValue {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 10px 0 20px 0;
+  color: vars.$secondary-color;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.button {
+  background-color: vars.$primary-color;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1.5rem;
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: lighten(vars.$primary-color, 10%);
+  }
+
+  &:active {
+    background-color: darken(vars.$primary-color, 10%);
+  }
+
+  &:focus-visible {
+    outline: 3px solid vars.$secondary-color;
+    outline-offset: 2px;
+  }
+}
+
+.info {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: lighten(vars.$primary-color, 30%);
+}
